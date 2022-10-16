@@ -8,6 +8,7 @@ function App() {
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
         {/* create a field for text */}
         <input className='Text-field' type="text" placeholder="Enter your name" />
+
       </header>
     </div>
   );
