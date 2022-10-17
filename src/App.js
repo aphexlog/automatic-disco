@@ -1,16 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+// import logo from './logo.svg';
+import * as mui from '@mui/material';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
-        {/* create a field for text */}
-        <input className='Text-field' type="text" placeholder="Enter your name" />
-
-      </header>
-    </div>
+    <mui.Box style={
+      {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: '100vh',
+        backgroundColor: '#282c34',
+        color: 'white',
+      }
+    }>
+      <div
+      // center the content
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '100vh',
+      }}
+      >
+        <mui.TextField
+          id="NameField"
+          label="What's your name?"
+          variant="outlined"
+          sx={{ m: 1, width: '30ch' }}
+          onClick={() => console.log('clicked')}
+          color="secondary"
+          />
+      </div>
+    </mui.Box>
   );
 }
 
