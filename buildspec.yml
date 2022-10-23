@@ -5,17 +5,14 @@ frontend:
     preBuild:
       commands:
         - npm ci
-build:
-    commands:
-        # run build script
-        - npm run-script build
-
-artifacts:
-  # include all files required to run application
-  # notably excluded is node_modules, as this will cause overwrite error on deploy
-  files:
-    - public/**/*
-    - src/**/*
-    - package.json
-    - appspec.yml
-    - scripts/**/*
+    build:
+      commands:
+        - amplify env checkout staging
+        - npm run build
+  artifacts:
+    baseDirectory: build
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
