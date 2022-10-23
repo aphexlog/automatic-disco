@@ -7,7 +7,7 @@ frontend:
   phases:
     preBuild:
       commands:
-        - amplify env checkout $BACKEND_ENV
+        - amplify env checkout staging
         - npm ci
     build:
       commands:
