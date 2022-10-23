@@ -1,13 +1,16 @@
 # create a buildspec.yml file
 version: 1
+env:
+  secrets-manager:
+    BACKEND_ENV: "staging"
 frontend:
   phases:
     preBuild:
       commands:
+        - amplify env checkout $BACKEND_ENV
         - npm ci
     build:
       commands:
-        - amplify env checkout staging
         - npm run build
   artifacts:
     baseDirectory: build
