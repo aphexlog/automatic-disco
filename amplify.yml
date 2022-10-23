@@ -2,7 +2,7 @@
 version: 1
 env:
   secrets-manager:
-    BACKEND_ENV: "staging"
+    BACKEND_ENV: "BACKEND_ENV:staging"
 frontend:
   phases:
     preBuild:
