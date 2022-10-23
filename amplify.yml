@@ -1,8 +1,8 @@
 # create a buildspec.yml file
 version: 1
 env:
-  secrets-manager:
-    BACKEND_ENV: "BACKEND_ENV:staging"
+  variables:
+    BACKEND_ENV: "staging"
 frontend:
   phases:
     preBuild:
